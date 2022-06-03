@@ -1,0 +1,4 @@
+FLUTTER_FLAVOR=Development
+PRODUCT_BUNDLE_IDENTIFIER=com.tsurumotokentaro.ramendiary.development
+DISPLAY_NAME=RamenDiary_Dev
+FLUTTER_TARGET=lib/main.dart
