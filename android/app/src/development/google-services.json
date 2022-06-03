@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "623756579243",
+    "project_id": "ramendiary-development",
+    "storage_bucket": "ramendiary-development.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623756579243:android:dc99ce7b9d4db3de6dc2ee",
+        "android_client_info": {
+          "package_name": "com.tsurumotokentaro.ramendiary.development"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "623756579243-sh2n60n3l8tc8u5k0pl6e4m4v06qqc4d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLTZmxFDaAVJHCU41aULzgnmQN8RbHUZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "623756579243-sh2n60n3l8tc8u5k0pl6e4m4v06qqc4d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "623756579243-jgcc7va2ptlbk7n10krg8bf7f3vj99g9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tsurumotokentaro.ramendiary.development"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
