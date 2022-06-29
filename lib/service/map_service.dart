@@ -22,7 +22,9 @@ class MapServiceImpl extends MapService {
             .getNearBySearch(
                 Location(lat: position.latitude, lng: position.longitude),
                 radiusMeter,
-                language: _launguageCode))
+                language: _launguageCode,
+                type: "restaurant",
+                keyword: "ラーメン"))
         ?.results;
     print(results);
   }
