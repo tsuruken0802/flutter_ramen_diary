@@ -1,20 +1,21 @@
 import 'package:equatable/equatable.dart';
+import 'package:geolocator/geolocator.dart';
 
 class MapState extends Equatable {
-  final String title;
+  final Position? firstPosition;
 
   const MapState({
-    required this.title,
+    this.firstPosition,
   });
 
   MapState copyWith({
-    String? title,
+    Position? firstPosition,
   }) {
-    return MapState(title: title ?? this.title);
+    return MapState(firstPosition: firstPosition ?? this.firstPosition);
   }
 
   @override
   List<Object?> get props => [
-        title,
+        firstPosition,
       ];
 }

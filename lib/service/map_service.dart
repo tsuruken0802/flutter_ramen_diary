@@ -12,8 +12,7 @@ abstract class MapService {
 class MapServiceImpl extends MapService {
   MapServiceImpl();
 
-  final GooglePlace _googlePlace =
-      GooglePlace(const String.fromEnvironment(MapCostants.apiKey));
+  final GooglePlace _googlePlace = GooglePlace(MapCostants.apiKey);
 
   static const String _launguageCode = 'ja';
 
@@ -28,8 +27,6 @@ class MapServiceImpl extends MapService {
                 type: "restaurant",
                 keyword: "ラーメン"))
         ?.results;
-    results?.forEach((element) {
-      debugPrint(element.name);
-    });
+    print(results?.length);
   }
 }
