@@ -1,22 +1,22 @@
 import 'package:equatable/equatable.dart';
 
 class LoginState extends Equatable {
-  final String title;
+  final bool registerMode;
 
   const LoginState({
-    this.title = '',
+    this.registerMode = true,
   });
 
   LoginState copyWith({
-    String? title,
+    bool? registerMode,
   }) {
     return LoginState(
-      title: title ?? this.title,
+      registerMode: registerMode ?? this.registerMode,
     );
   }
 
   @override
   List<Object?> get props => [
-        title,
+        registerMode,
       ];
 }
