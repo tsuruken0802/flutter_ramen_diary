@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_ramen_diary/screen/home_tab/home_tab_screen_view.dart';
 import 'package:flutter_ramen_diary/screen/map/map_screen_view.dart';
 import 'package:flutterfire_ui/auth.dart';
 
@@ -36,6 +37,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return MapScreenView();
+    return HomeTabScreenView();
   }
 }

@@ -1,22 +1,22 @@
 import 'package:equatable/equatable.dart';
 
 class HomeTabState extends Equatable {
-  final String title;
+  final int currentIndex;
 
   const HomeTabState({
-    this.title = '',
+    this.currentIndex = 0,
   });
 
   HomeTabState copyWith({
-    String? title,
+    int? currentIndex,
   }) {
     return HomeTabState(
-      title: title ?? this.title,
+      currentIndex: currentIndex ?? this.currentIndex,
     );
   }
 
   @override
   List<Object?> get props => [
-        title,
+        currentIndex,
       ];
 }

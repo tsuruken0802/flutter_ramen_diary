@@ -9,8 +9,14 @@ class HomeTabBloc extends Bloc<HomeTabEvent, HomeTabState> {
   HomeTabBloc() : super(const HomeTabState()) {
     _service = HomeTabServiceImpl();
     on<OnFirstRequest>(_onFirstRequest);
+    on<OnChangeCurrentIndex>(_onChangeCurrentIndex);
     add(OnFirstRequest());
   }
 
   _onFirstRequest(OnFirstRequest event, Emitter<HomeTabState> emit) async {}
+
+  _onChangeCurrentIndex(
+      OnChangeCurrentIndex event, Emitter<HomeTabState> emit) async {
+    emit(state.copyWith(currentIndex: event.currentIndex));
+  }
 }
