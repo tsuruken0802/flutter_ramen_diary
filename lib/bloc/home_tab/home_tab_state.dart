@@ -1,23 +1,22 @@
 import 'package:equatable/equatable.dart';
-import 'package:flutter_ramen_diary/enum/request_status.dart';
 
 class HomeTabState extends Equatable {
-  final RequestStatus? requestStatus;
+  final String title;
 
   const HomeTabState({
-    this.requestStatus,
+    this.title = '',
   });
 
   HomeTabState copyWith({
-    RequestStatus? requestStatus,
+    String? title,
   }) {
     return HomeTabState(
-      requestStatus: requestStatus ?? RequestStatus.idle,
+      title: title ?? this.title,
     );
   }
 
   @override
   List<Object?> get props => [
-        requestStatus,
+        title,
       ];
 }
