@@ -94,12 +94,19 @@ class AuthHelper {
     return await FirebaseAuth.instance.signInWithCredential(credential);
   }
 
-  static Future<UserCredential?> signInWithMail(
-      {required String email, required String mailLink}) async {
-    final auth = FirebaseAuth.instance;
-    if (auth.isSignInWithEmailLink(mailLink)) {
-      // The client SDK will parse the code from the link for you.
-      return auth.signInWithEmailLink(email: email, emailLink: mailLink);
+  static Future<UserCredential?> signInWithMail({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        print('No user found for that email.');
+      } else if (e.code == 'wrong-password') {
+        print('Wrong password provided for that user.');
+      }
     }
   }
 
