@@ -18,10 +18,11 @@ class TermAndPrivacyView extends StatelessWidget {
       );
     }
 
-    Widget _termButtonText(
-        {required String text,
-        required String url,
-        required VoidCallback onTap}) {
+    Widget _termButtonText({
+      required String text,
+      required String url,
+      required VoidCallback onTap,
+    }) {
       return GestureDetector(
         onTap: onTap,
         child: Text(

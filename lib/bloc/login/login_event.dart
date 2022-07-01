@@ -8,3 +8,5 @@ abstract class LoginEvent extends Equatable {
 }
 
 class OnFirstRequest extends LoginEvent {}
+
+class OnTapChangeRegisterMode extends LoginEvent {}

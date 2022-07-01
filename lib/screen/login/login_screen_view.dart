@@ -3,11 +3,14 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_ramen_diary/bloc/login/login_bloc.dart';
+import 'package:flutter_ramen_diary/bloc/login/login_event.dart';
 import 'package:flutter_ramen_diary/bloc/login/login_state.dart';
 import 'package:flutter_ramen_diary/constants/color_data.dart';
 import 'package:flutter_ramen_diary/gen/assets.gen.dart';
+import 'package:flutter_ramen_diary/helper/transition_helper.dart';
 import 'package:flutter_ramen_diary/screen/login/login_button.dart';
 import 'package:flutter_ramen_diary/screen/login/term_and_privacy_view.dart';
+import 'package:flutter_ramen_diary/screen/mail_login/mail_login_screen_view.dart';
 
 class LoginScreenView extends StatelessWidget {
   LoginScreenView({Key? key}) : super(key: key);
@@ -28,8 +31,7 @@ class LoginScreenView extends StatelessWidget {
           padding: const EdgeInsets.only(left: 4.0),
           child: GestureDetector(
             onTap: () {
-              // _bloc.add(ChangeLoginMode(
-              //     registerAccountMode: !_bloc.state.registerAccountMode));
+              _bloc.add(OnTapChangeRegisterMode());
             },
             child: Text(rightText,
                 style: const TextStyle(
@@ -54,7 +56,7 @@ class LoginScreenView extends StatelessWidget {
           appBar: AppBar(),
           body: SafeArea(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(16.0),
               child: Column(children: [
                 const Spacer(
                   flex: 3,
@@ -95,15 +97,10 @@ class LoginScreenView extends StatelessWidget {
                   textColor: Colors.white,
                   bgColor: Colors.black,
                   onTap: () {
-                    // final appBarTitle = state.registerAccountMode
-                    //     ? Localized.of(context)
-                    //         .registerAccountSendConfirmMailAppBarTitle1
-                    //     : Localized.of(context)
-                    //         .registerAccountSendConfirmMailAppBarTitle2;
-                    // TransitionHelper.push(
-                    //     context,
-                    //     RegisterAccountSendConfirmMailScreenView(
-                    //         appBarTitle: appBarTitle));
+                    TransitionHelper.push(
+                      context,
+                      MailLoginScreenView(),
+                    );
                   },
                 ),
                 const Spacer(

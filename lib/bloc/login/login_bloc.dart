@@ -9,8 +9,14 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc() : super(const LoginState()) {
     _service = LoginServiceImpl();
     on<OnFirstRequest>(_onFirstRequest);
+    on<OnTapChangeRegisterMode>(_onTapChangeRegisterMode);
     add(OnFirstRequest());
   }
 
   _onFirstRequest(OnFirstRequest event, Emitter<LoginState> emit) async {}
+
+  _onTapChangeRegisterMode(
+      OnTapChangeRegisterMode event, Emitter<LoginState> emit) async {
+    emit(state.copyWith(registerMode: !state.registerMode));
+  }
 }

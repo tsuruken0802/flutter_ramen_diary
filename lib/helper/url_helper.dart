@@ -6,7 +6,7 @@ class UrlHelper {
     bool forceSafariVC = false,
   }) async {
     final Uri url = Uri.parse(urlString);
-    if (await canLaunchUrl(url)) {
+    if (!await canLaunchUrl(url)) {
       return;
     }
     await launchUrl(url);
