@@ -42,9 +42,9 @@ class MailLoginState extends Equatable {
 
   String get appBarTitle {
     if (registerMode) {
-      return 'メールアドレスで新規登録';
+      return '新規登録';
     } else {
-      return 'メールアドレスでログイン';
+      return 'ログイン';
     }
   }
 

@@ -94,19 +94,45 @@ class AuthHelper {
     return await FirebaseAuth.instance.signInWithCredential(credential);
   }
 
-  static Future<UserCredential?> signInWithMail({
+  static Future<String?> signInWithMail({
     required String email,
     required String password,
   }) async {
     try {
-      UserCredential userCredential = await FirebaseAuth.instance
+      await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
+      return null;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
-        print('No user found for that email.');
+        return 'ユーザーが見つかりませんでした。';
       } else if (e.code == 'wrong-password') {
-        print('Wrong password provided for that user.');
+        return 'パスワードが間違っています。';
       }
+    }
+  }
+
+  static Future<String?> signUpWithMail({
+    required String email,
+    required String password,
+  }) async {
+    try {
+      await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+      return null;
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'user-not-found') {
+        return 'ユーザーが見つかりませんでした。';
+      } else if (e.code == 'wrong-password') {
+        return 'パスワードが間違っています。';
+      }
+      return 'エラーが発生しました';
+    }
+  }
+
+  static Future sendEmailVarification() async {
+    User? user = FirebaseAuth.instance.currentUser;
+    if (user != null && !user.emailVerified) {
+      await user.sendEmailVerification();
     }
   }
 

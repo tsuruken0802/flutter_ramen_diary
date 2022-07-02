@@ -41,3 +41,5 @@ class OnChangePasswordConfirm extends MailLoginEvent {
   @override
   List<Object?> get props => [password];
 }
+
+class OnTapRegister extends MailLoginEvent {}
